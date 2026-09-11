@@ -33,11 +33,16 @@ module single_cycle_TB;
         repeat (2) @(posedge clk);
         reset_n = 0;
         @(posedge clk);
-        repeat (3) @(posedge clk);
-        if (dut.register.register[18] !== 32'hDEADBEEF) begin
-            $error("FAIL: x18 = %h, expected DEADBEEF", dut.register.register[18]);
+        repeat (7) @(posedge clk);
+        if (dut.register.register[19] !== 32'hDEADBEEF) begin
+            $error("FAIL: x19 = %h, expected DEADBEEF", dut.register.register[19]);
         end else begin
-            $display("PASS: x18 = %h as expected", dut.register.register[18]);
+            $display("PASS: x19 = %h as expected", dut.register.register[19]);
+        end
+        if (dut.data_memory.mem[3] !== 32'hDEADBEEF) begin
+            $error("FAIL: datamem 12 = %h, expected DEADBEEF", dut.data_memory.mem[3]);
+        end else begin
+            $display("PASS: datamem 12 = %h as expected",dut.data_memory.mem[3]);
         end
 
         #20;

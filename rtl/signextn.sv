@@ -29,6 +29,7 @@ module signextn(
     always_comb begin
         case(imm_source) 
             2'b00 : gathered_imm = {instr[24:13]};
+            2'b01 : gathered_imm = {instr[24:18],instr[4:0]};
             default: gathered_imm = {12{1'b0}};
          endcase
     end

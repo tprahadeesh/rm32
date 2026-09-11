@@ -3,7 +3,7 @@ module datapath (
     input logic reset_n
 );
     //PROGRAM COUNTER
-    logic [31:0]pc,pc_next;
+    logic [31:0]pc,pc_next; //PC is the current instruction PC next will be loaded next
     always @(posedge clk) begin
         if (reset_n) begin
             pc <= 0;
@@ -71,13 +71,16 @@ module datapath (
    alu alu1(alu_ctrl,data1,data_input2,alu_result,alu_zero);     
            
    // DATA MEMORY
-   
+   logic [31:0]addr;
    logic [31:0]write_data;
    logic [31:0]dmem_data;
+   
+   assign write_data = data2;
+   assign addr = alu_result; 
     memory #(.mem_init("dmem.hex")) data_memory(
     clk,
-    alu_result,
-    write_data,
+    addr,
+    write_data,        
     mem_write,           //Control signal
     reset_n,
     dmem_data 

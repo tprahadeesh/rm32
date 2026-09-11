@@ -4,8 +4,8 @@ module reg_file (
     input logic write_en,
     input logic reset_n,
     input logic clk,
-    output logic data1,
-    output logic data2
+    output logic [31:0]data1,
+    output logic [31:0]data2
     );
     reg [31:0] register [31:0];
     always @(posedge clk) begin

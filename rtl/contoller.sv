@@ -34,11 +34,17 @@ module contoller(
     always_comb begin
         case(op_code)
             //LW
-            7'b0000011 : begin 
-                reg_write = 1'b1;
+            7'b0000011 : begin //OP for LW
+                reg_write = 1'b1;   
                 mem_write = 1'b0;
                 alu_op = 2'b00;
                 imm_src = 2'b00;
+            end
+            7'b0100011 : begin  // OP for SW
+                reg_write = 1'b0;
+                mem_write = 1'b1;
+                alu_op = 2'b00;
+                imm_src = 2'b01;
             end
             default : begin 
                 reg_write = 1'b0;
