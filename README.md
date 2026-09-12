@@ -28,15 +28,15 @@ Load Word simulation -
 
 (Suceesfully loaded 00000123 and DEADBEEF in register file)
 
-![load_sim](load_better.png)
+![load_sim](images/load_better.png)
 
 Load and Store Simulation -
 
-![lw_sw_sim](lw_sw_sim.png)
+![lw_sw_sim](images/lw_sw_sim.png)
 
 TCL console output -
 
-![tcl_console_lw_sw](tcl_console_lw_sw.png)
+![tcl_console_lw_sw](images/tcl_console_lw_sw.png)
 
 ## 5. References
 
