@@ -53,6 +53,6 @@ TCL console output -
 ---
 
 <p align="center">
-  <em>RM32 — Updating the code 1 nanometer at a time (ASML pls hire)</em><br/>
+  <em>RM32 — Updating the code 1 nanometer at a time</em><br/>
   <em>Prahadeesh Narendran Thimma · 2026</em>
 </p>
